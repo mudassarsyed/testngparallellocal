@@ -1,24 +1,28 @@
 {
   "server": "hub-cloud.browserstack.com",
-  "user": "BROWSERSTACK_USERNAME",
-  "key": "BROWSERSTACK_ACCESS_KEY",
+  "user": "",
+  "key": "",
 
   "capabilities": {
     "build": "testng-browserstack",
     "name": "parallel_appium_test",
     "browserstack.debug": true,
-    "app": "bs://<hashed app-id>"
+    "browserstack.local": true,
+    "app": "bs://0924d8ab4a63e2220412ee161784858a5abd42a3"
   },
 
   "environments": {
     "pixel": {
-      "device": "Google Pixel"
+      "device": "Google Pixel",
+      "browserstack.localIdentifier": "device1"
     },
     "galaxy_s7": {
-      "device": "Samsung Galaxy S7"
+      "device": "Samsung Galaxy S7",
+      "browserstack.localIdentifier": "device2"
     },
     "nexus_9": {
-      "device": "Google Nexus 9"
+      "device": "Samsung Galaxy S8",
+      "browserstack.localIdentifier": "device3"
     }
   }
 }

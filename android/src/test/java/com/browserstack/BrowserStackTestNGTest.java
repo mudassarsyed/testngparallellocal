@@ -63,10 +63,16 @@ public class BrowserStackTestNGTest {
           capabilities.setCapability("app", app);
         }
 
+        String localIdentifier = capabilities.getCapability("browserstack.localIdentifier").toString();
+        if(localIdentifier != null && !localIdentifier.isEmpty()) {
+          capabilities.setCapability("browserstack.localIdentifier", localIdentifier);
+        }
+
         if(capabilities.getCapability("browserstack.local") != null && capabilities.getCapability("browserstack.local") == "true"){
             l = new Local();
             Map<String, String> options = new HashMap<String, String>();
             options.put("key", accessKey);
+            options.put("localIdentifier",capabilities.getCapability("browserstack.localIdentifier").toString());
             l.start(options);
         }
 
